@@ -9,14 +9,14 @@ namespace CoreWcf.Samples.SupportingTokens
     {
         public static Binding CreateMultiFactorAuthenticationBinding()
         {
-            HttpTransportBindingElement httpTransport = new HttpTransportBindingElement();
+            HttpTransportBindingElement httpTransport = new HttpsTransportBindingElement();
 
             // the message security binding element will be configured to require 2 tokens:
             // 1) A username-password encrypted with the service token
             // 2) A client certificate used to sign the message
 
             // Instantiate a binding element that will require the username/password token in the message (encrypted with the server cert)
-            SymmetricSecurityBindingElement messageSecurity = SecurityBindingElement.CreateUserNameForCertificateBindingElement();
+            TransportSecurityBindingElement messageSecurity = SecurityBindingElement.CreateUserNameOverTransportBindingElement();
 
             // Create supporting token parameters for the client X509 certificate.
             X509SecurityTokenParameters clientX509SupportingTokenParameters = new X509SecurityTokenParameters();
