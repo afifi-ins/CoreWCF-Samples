@@ -24,7 +24,7 @@ app.UseServiceModel(builder =>
 
     // Configure WSDL to be available
     var serviceMetadataBehavior = app.Services.GetRequiredService<ServiceMetadataBehavior>();
-    serviceMetadataBehavior.HttpGetEnabled = true;
+    serviceMetadataBehavior.HttpsGetEnabled = true;
 });
 
 app.Run();

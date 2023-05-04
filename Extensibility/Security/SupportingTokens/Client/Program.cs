@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel.Channels;
 
 Binding multipleTokensBinding = BindingHelper.CreateMultiFactorAuthenticationBinding();
-EndpointAddress serviceAddress = new EndpointAddress("http://localhost:5000/EchoService");
+EndpointAddress serviceAddress = new EndpointAddress("https://localhost:5001/EchoService");
 ChannelFactory<IEchoService> channelFactory = null;
 IEchoService client = null;
 
